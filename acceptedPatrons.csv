@@ -1,46 +1,25 @@
-Name,Email,Waitlisted Name,Waitlisted Email
-Walter White,walter.white@example.com,Kevin Malone,kevin.malone@example.com
-Jesse Pinkman,jesse.pinkman@example.com,Kevin Malone,kevin.malone@example.com
-Saul Goodman,saul.goodman@example.com,Kevin Malone,kevin.malone@example.com
-Skyler White,skyler.white@example.com,Kevin Malone,kevin.malone@example.com
-Hank Schrader,hank.schrader@example.com,Kevin Malone,kevin.malone@example.com
-Gus Fring,gus.fring@example.com,Kevin Malone,kevin.malone@example.com
-Mike Ehrmantraut,mike.ehrmantraut@example.com,Kevin Malone,kevin.malone@example.com
-Tuco Salamanca,tuco.salamanca@example.com,Kevin Malone,kevin.malone@example.com
-Lydia Rodarte-Quayle,lydia.quayle@example.com,Kevin Malone,kevin.malone@example.com
-Todd Alquist,todd.alquist@example.com,Kevin Malone,kevin.malone@example.com
-Harry Potter,harry.potter@example.com,Kevin Malone,kevin.malone@example.com
-Hermione Granger,hermione.granger@example.com,Kevin Malone,kevin.malone@example.com
-Ron Weasley,ron.weasley@example.com,Kevin Malone,kevin.malone@example.com
-Albus Dumbledore,albus.dumbledore@example.com,Kevin Malone,kevin.malone@example.com
-Severus Snape,severus.snape@example.com,Kevin Malone,kevin.malone@example.com
-Frodo Baggins,frodo.baggins@example.com,Kevin Malone,kevin.malone@example.com
-Samwise Gamgee,samwise.gamgee@example.com,Kevin Malone,kevin.malone@example.com
-Gandalf the Grey,gandalf.grey@example.com,Kevin Malone,kevin.malone@example.com
-Aragorn Elessar,aragorn.elessar@example.com,Kevin Malone,kevin.malone@example.com
-Legolas Greenleaf,legolas.greenleaf@example.com,Kevin Malone,kevin.malone@example.com
-Tony Stark,tony.stark@example.com,Kevin Malone,kevin.malone@example.com
-Steve Rogers,steve.rogers@example.com,Kevin Malone,kevin.malone@example.com
-Bruce Banner,bruce.banner@example.com,Kevin Malone,kevin.malone@example.com
-Natasha Romanoff,natasha.romanoff@example.com,Kevin Malone,kevin.malone@example.com
-Clint Barton,clint.barton@example.com,Kevin Malone,kevin.malone@example.com
-Peter Parker,peter.parker@example.com,Kevin Malone,kevin.malone@example.com
-Bruce Wayne,bruce.wayne@example.com,Kevin Malone,kevin.malone@example.com
-Clark Kent,clark.kent@example.com,Kevin Malone,kevin.malone@example.com
-Diana Prince,diana.prince@example.com,Kevin Malone,kevin.malone@example.com
-Barry Allen,barry.allen@example.com,Kevin Malone,kevin.malone@example.com
-Oliver Queen,oliver.queen@example.com,Kevin Malone,kevin.malone@example.com
-Jon Snow,jon.snow@example.com,Kevin Malone,kevin.malone@example.com
-Daenerys Targaryen,daenerys.targaryen@example.com,Kevin Malone,kevin.malone@example.com
-Tyrion Lannister,tyrion.lannister@example.com,Kevin Malone,kevin.malone@example.com
-Arya Stark,arya.stark@example.com,Kevin Malone,kevin.malone@example.com
-Sansa Stark,sansa.stark@example.com,Kevin Malone,kevin.malone@example.com
-Cersei Lannister,cersei.lannister@example.com,Kevin Malone,kevin.malone@example.com
-Jaime Lannister,jaime.lannister@example.com,Kevin Malone,kevin.malone@example.com
-Eddard Stark,eddard.stark@example.com,Kevin Malone,kevin.malone@example.com
-Robb Stark,robb.stark@example.com,Kevin Malone,kevin.malone@example.com
-Michael Scott,michael.scott@example.com,Kevin Malone,kevin.malone@example.com
-Jim Halpert,jim.halpert@example.com,Kevin Malone,kevin.malone@example.com
-Pam Beesly,pam.beesly@example.com,Kevin Malone,kevin.malone@example.com
-Dwight Schrute,dwight.schrute@example.com,Kevin Malone,kevin.malone@example.com
-Angela Martin,angela.martin@example.com,Kevin Malone,kevin.malone@example.com
+Name,Email
+Severus Snape,severus.snape@example.com
+Clark Kent,clark.kent@example.com
+Barry Allen,barry.allen@example.com
+Jim Halpert,jim.halpert@example.com
+Pam Beesly,pam.beesly@example.com
+Ross Geller,ross.geller@example.com
+Raj Koothrappali,raj.koothrappali @example .com
+Maggie Simpson,maggie.simpson @example .com
+Lydia Rodarte-Quayle,lydia.quayle@example.com
+Todd Alquist,todd.alquist@example.com
+Samwise Gamgee,samwise.gamgee@example.com
+Steve Rogers,steve.rogers@example.com
+Clint Barton,clint.barton@example.com
+Bruce Wayne,bruce.wayne@example.com
+Diana Prince,diana.prince@example.com
+Daenerys Targaryen,daenerys.targaryen@example.com
+Cersei Lannister,cersei.lannister@example.com
+Jaime Lannister,jaime.lannister@example.com
+Angela Martin,angela.martin@example.com
+Stanley Hudson,stanley.hudson@example.com
+Howard Wolowitz,howard.wolowitz @example .com
+Lily Aldrin,lily.aldrin @example .com
+Marty Byrde,marty.byrde @example .com
+Lisa Simpson,lisa.simpson @example .com
