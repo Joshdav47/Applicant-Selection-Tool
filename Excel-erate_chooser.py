@@ -7,17 +7,11 @@ df = pd.read_csv(r'Excel-erate Application.csv')
 # TODO: Make this program runnable without an ide
 
 def trim_dictionary(input_dict, target_size):
-    # TODO: Figure out why the waitlistedPatrons{} is only returning one applicant
-    waitlistedPatrons = {}
     while len(input_dict) > target_size:
-        name, email = input_dict.popitem()
-        waitlistedPatrons[name] = email
-    return input_dict, waitlistedPatrons
+        input_dict.popitem()
+    return input_dict
 
 def applicantaccepter(target_size):
-
-    # Increase target size by 2 for waitlist
-    # target_size *= 2
 
     # Create priority lists and accepted applicants
     acceptedPatrons = {}
@@ -41,21 +35,24 @@ def applicantaccepter(target_size):
                 or df.iloc[i, 9] == 'Native Hawaiian/Pacific Islander' or df.iloc[i, 9] == 'Native American'):
             identity.update({df.iloc[i, 2] : df.iloc[i, 1]})
 
-        if len(income) + len(education) + len(identity) < target_size:
+    if len(income) + len(education) + len(identity) < target_size:
+        for name, email in income.items():
+                acceptedPatrons[name] = email
+        for name, email in education.items():
+                acceptedPatrons[name] = email
+        for name, email in identity.items():
+                acceptedPatrons[name] = email
+    else:
+        while len(acceptedPatrons) < target_size:
             for name, email in income.items():
-                acceptedPatrons[name] = email
+                    acceptedPatrons[name] = email
             for name, email in education.items():
-                acceptedPatrons[name] = email
+                    acceptedPatrons[name] = email
             for name, email in identity.items():
-                acceptedPatrons[name] = email
-        else:
-            while len(acceptedPatrons) < target_size:
-                for name, email in income.items():
                     acceptedPatrons[name] = email
-                for name, email in education.items():
-                    acceptedPatrons[name] = email
-                for name, email in identity.items():
-                    acceptedPatrons[name] = email
+
+    if target_size < len(acceptedPatrons):
+        acceptedPatrons = trim_dictionary(acceptedPatrons, target_size)
 
     return acceptedPatrons
 
