@@ -20,22 +20,25 @@ def applicantaccepter(target_size):
     identity = {}
 
     for i in range(len(df)):
-        if df.iloc[i, 13] == 'Less than $20,000':
-            income.update({df.iloc[i, 2] : df.iloc[i, 1]})
+        if len(df) <= target_size:
+            acceptedPatrons.update({df.iloc[i, 2]: df.iloc[i, 1]})
 
-    for i in range(len(df)):
-        if (df.iloc[i, 11] == 'No High School' or df.iloc[i, 11] == 'Some High School' or
-                df.iloc[i, 11] == 'High School/GED' or df.iloc[i, 11] == 'Some College but no degree'):
-            education.update({df.iloc[i, 2]: df.iloc[i, 1]})
+        elif (df.iloc[i, 3] == 'Yes' and df.iloc[i, 5] == 'Yes' and df.iloc[i, 2] not in acceptedPatrons
+                and not pd.isnull(df.iloc[i, 1])):
+            if df.iloc[i, 13] == 'Less than $20,000':
+                income.update({df.iloc[i, 2] : df.iloc[i, 1]})
 
-    for i in range(len(df)):
-        if (df.iloc[i, 11] == 'Female' or df.iloc[i, 11] == 'Non-binary/third gender' or
-                df.iloc[i, 11] == 'Cisgender' or df.iloc[i, 11] == 'Agender' or df.iloc[i, 11] == 'Genderqueer' or
-                df.iloc[i, 9] == 'Asian' or df.iloc[i, 9] == 'Black, non-Hispanic' or df.iloc[i, 9] == 'Hispanic/Latino'
-                or df.iloc[i, 9] == 'Native Hawaiian/Pacific Islander' or df.iloc[i, 9] == 'Native American'):
-            identity.update({df.iloc[i, 2] : df.iloc[i, 1]})
+            elif (df.iloc[i, 11] == 'No High School' or df.iloc[i, 11] == 'Some High School' or
+                  df.iloc[i, 11] == 'High School/GED' or df.iloc[i, 11] == 'Some College but no degree'):
+                education.update({df.iloc[i, 2]: df.iloc[i, 1]})
 
-    if len(income) + len(education) + len(identity) < target_size:
+            elif (df.iloc[i, 11] == 'Female' or df.iloc[i, 11] == 'Non-binary/third gender' or
+                    df.iloc[i, 11] == 'Cisgender' or df.iloc[i, 11] == 'Agender' or df.iloc[i, 11] == 'Genderqueer' or
+                    df.iloc[i, 9] == 'Asian' or df.iloc[i, 9] == 'Black, non-Hispanic' or df.iloc[i, 9] == 'Hispanic/Latino'
+                    or df.iloc[i, 9] == 'Native Hawaiian/Pacific Islander' or df.iloc[i, 9] == 'Native American'):
+                identity.update({df.iloc[i, 2] : df.iloc[i, 1]})
+
+    if (len(income) + len(education) + len(identity) < target_size) or len(df) <= target_size:
         for name, email in income.items():
                 acceptedPatrons[name] = email
         for name, email in education.items():
