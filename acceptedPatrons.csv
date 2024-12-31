@@ -1,21 +1,21 @@
-Name,Email
-Severus Snape,severus.snape@example.com
-Clark Kent,clark.kent@example.com
-Barry Allen,barry.allen@example.com
-Jim Halpert,jim.halpert@example.com
-Pam Beesly,pam.beesly@example.com
-Ross Geller,ross.geller@example.com
-Raj Koothrappali,raj.koothrappali @example .com
-Maggie Simpson,maggie.simpson @example .com
-Lydia Rodarte-Quayle,lydia.quayle@example.com
-Todd Alquist,todd.alquist@example.com
-Samwise Gamgee,samwise.gamgee@example.com
-Steve Rogers,steve.rogers@example.com
-Clint Barton,clint.barton@example.com
-Bruce Wayne,bruce.wayne@example.com
-Diana Prince,diana.prince@example.com
-Daenerys Targaryen,daenerys.targaryen@example.com
-Cersei Lannister,cersei.lannister@example.com
-Jaime Lannister,jaime.lannister@example.com
-Angela Martin,angela.martin@example.com
-Stanley Hudson,stanley.hudson@example.com
+Name,Email,Waitlisted Name,Waitlisted Email
+Severus Snape,severus.snape@example.com,Saul Goodman,saul.goodman@example.com
+Lydia Rodarte-Quayle,lydia.quayle@example.com,Skyler White,skyler.white@example.com
+Angela Martin,angela.martin@example.com,Hank Schrader,hank.schrader@example.com
+Howard Wolowitz,howard.wolowitz @example.com,Gus Fring,gus.fring@example.com
+Lily Aldrin,lily.aldrin @example.com,Mike Ehrmantraut,mike.ehrmantraut@example.com
+Marty Byrde,marty.byrde @example.com,Todd Alquist,todd.alquist@example.com
+Lisa Simpson,lisa.simpson @example.com,Harry Potter,harry.potter@example.com
+Tuco Salamanca,tuco.salamanca@example.com,Hermione Granger,hermione.granger@example.com
+Arya Stark,arya.stark@example.com,Ron Weasley,ron.weasley@example.com
+Sansa Stark,sansa.stark@example.com,Albus Dumbledore,albus.dumbledore@example.com
+Kevin Malone,kevin.malone@example.com,Frodo Baggins,frodo.baggins@example.com
+Oscar Martinez,oscar.martinez@example.com,Samwise Gamgee,samwise.gamgee@example.com
+Phyllis Vance,phyllis.vance@example.com,Gandalf the Grey,gandalf.grey@example.com
+Meredith Palmer,meredith.palmer@example.com,Aragorn Elessar,aragorn.elessar@example.com
+Joey Tribbiani,joey.tribbiani @example.com,Legolas Greenleaf,legolas.greenleaf@example.com
+Marshall Eriksen,marshall.eriksen @example.com,Tony Stark,tony.stark@example.com
+Darlene Snell,darlene.snell @example.com,Steve Rogers,steve.rogers@example.com
+Ann Perkins,ann.perkins @example.com,Bruce Banner,bruce.banner@example.com
+Walter White,walter.white@example.com,Natasha Romanoff,natasha.romanoff@example.com
+Jesse Pinkman,jesse.pinkman@example.com,Clint Barton,clint.barton@example.com
