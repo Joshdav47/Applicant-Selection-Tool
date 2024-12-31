@@ -4,8 +4,6 @@ import pandas as pd
 # Read CSV file and created a dataframe
 df = pd.read_csv(r'Excel-erate Application.csv')
 
-# TODO: Make this program runnable without an ide
-
 def trim_dictionary(input_dict, target_size):
     while len(input_dict) > target_size:
         input_dict.popitem()
