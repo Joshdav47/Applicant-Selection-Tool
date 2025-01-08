@@ -34,8 +34,8 @@ def applicantaccepter(target_size):
             return acceptedPatrons
 
         # Creates Priority Dictionaries
-        elif ((df.iloc[i, 3] == 'Yes' and df.iloc[i, 5] == 'Yes' and df.iloc[i, 2] not in acceptedPatrons
-                and not pd.isnull(df.iloc[i, 1])) and df.iloc[i, 6]
+        elif ((df.iloc[i, 3] == 'Yes' and df.iloc[i, 5] == 'Yes' and df.iloc[i, 2] not in income
+                and df.iloc[i, 2] not in education and df.iloc[i, 2] not in identity and not pd.isnull(df.iloc[i, 1])) and df.iloc[i, 6]
               in ['Computer, Internet', 'Computer, Internet, Microsoft Excel 2016 or above',
                   'Computer, Internet,Microsoft Excel 2016 or above, A second monitor or the ability to split-screen or toggle between multiple programs (Zoom and Excel)']):
             if df.iloc[i, 13] == 'Less than $20,000':
@@ -69,7 +69,16 @@ def applicantaccepter(target_size):
     else:
         waitlistedPatrons = {}
 
-    return acceptedPatrons, waitlistedPatrons
+    # Return rejected applicants
+    rejectedPatrons = {}
+    for i in range(len(df)):
+        name = df.iloc[i, 2]
+        email = df.iloc[i, 1]
+        if ((name not in acceptedPatrons and email not in acceptedPatrons) and
+                (name not in waitlistedPatrons and email not in waitlistedPatrons)):
+            rejectedPatrons.update({df.iloc[i, 2]: df.iloc[i, 1]})
+
+    return acceptedPatrons, waitlistedPatrons, rejectedPatrons
 
 def main():
     # TODO: have the input checked for any letters or symbols, and removed
@@ -78,13 +87,23 @@ def main():
         while target_size < 1 or target_size > len(df):
             target_size = int(input("Please enter a valid size: "))
 
-    acceptedPatrons, waitlistedPatrons = applicantaccepter(target_size)
+    acceptedPatrons, waitlistedPatrons, rejectedPatrons = applicantaccepter(target_size)
     with open('acceptedPatrons.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Name', 'Email', 'Waitlisted Name', 'Waitlisted Email'])
         for (accepted_name, accepted_email), (waitlisted_name, waitlist_email) in zip(acceptedPatrons.items(),
                                                                                       waitlistedPatrons.items()):
             writer.writerow([accepted_name, accepted_email, waitlisted_name, waitlist_email])
+
+        writer.writerow(['\n'])
+        writer.writerow(['Rejected Name', 'Rejected Email'])
+        for (rejected_name, rejected_email) in rejectedPatrons.items():
+            writer.writerow([rejected_name, rejected_email])
+
+    print(len(rejectedPatrons))
+    print(len(acceptedPatrons))
+    print(len(waitlistedPatrons))
+    print(len(df))
 
 if __name__ == '__main__':
     main()
