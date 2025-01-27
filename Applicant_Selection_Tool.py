@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 
 # Read CSV file and created a dataframe
-df = pd.read_csv(r'Excel-erate Application.csv')
+df = pd.read_csv(r'applicantForm.csv')
 
 def trim_dictionary(input_dict, target_size):
     while len(input_dict) > target_size:
