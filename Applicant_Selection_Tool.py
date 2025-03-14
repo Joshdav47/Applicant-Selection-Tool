@@ -63,22 +63,20 @@ def applicantaccepter(target_size):
                 acceptedPatrons.update({name: email})
     elif len(acceptedPatrons) > target_size:
         acceptedPatrons = trim_dictionary(acceptedPatrons, target_size)
-    
     if len(acceptedPatrons) < len(df):
         waitlistedPatrons = waitlistApplicants(acceptedPatrons, target_size)
     else:
         waitlistedPatrons = {}
 
-    # Return rejected applicants
-    rejectedPatrons = {}
+    # Append any missed applicants to the Waitlist
     for i in range(len(df)):
         name = df.iloc[i, 2]
         email = df.iloc[i, 1]
         if ((name not in acceptedPatrons and email not in acceptedPatrons) and
                 (name not in waitlistedPatrons and email not in waitlistedPatrons)):
-            rejectedPatrons.update({df.iloc[i, 2]: df.iloc[i, 1]})
+            waitlistedPatrons.update({df.iloc[i, 2]: df.iloc[i, 1]})
 
-    return acceptedPatrons, waitlistedPatrons, rejectedPatrons
+    return acceptedPatrons, waitlistedPatrons
 
 def main():
     # TODO: have the input checked for any letters or symbols, and removed
@@ -87,22 +85,21 @@ def main():
         while target_size < 1 or target_size > len(df):
             target_size = int(input("Please enter a valid size: "))
 
-    acceptedPatrons, waitlistedPatrons, rejectedPatrons = applicantaccepter(target_size)
+    acceptedPatrons, waitlistedPatrons = applicantaccepter(target_size)
     with open('acceptedPatrons.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Name', 'Email', 'Waitlisted Name', 'Waitlisted Email'])
-        for (accepted_name, accepted_email), (waitlisted_name, waitlist_email) in zip(acceptedPatrons.items(),
-                                                                                      waitlistedPatrons.items()):
-            writer.writerow([accepted_name, accepted_email, waitlisted_name, waitlist_email])
+        writer.writerow(['Name', 'Email'])
+        for (accepted_name, accepted_email) in acceptedPatrons.items():
+            writer.writerow([accepted_name, accepted_email])
 
         writer.writerow(['\n'])
-        writer.writerow(['Rejected Name', 'Rejected Email'])
-        for (rejected_name, rejected_email) in rejectedPatrons.items():
-            writer.writerow([rejected_name, rejected_email])
+        writer.writerow(['Waitlisted Name', 'Waitlisted Email'])
+        for (waitlisted_name, waitlisted_email) in waitlistedPatrons.items():
+            writer.writerow([waitlisted_name, waitlisted_email])
 
-    print(len(rejectedPatrons))
     print(len(acceptedPatrons))
     print(len(waitlistedPatrons))
+    print(len(acceptedPatrons) + len(waitlistedPatrons))
     print(len(df))
 
 if __name__ == '__main__':
